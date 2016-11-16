@@ -4,9 +4,10 @@ class articleService {
         this.$http = $http;
     }
 
-    create(titre, contenu) {
+    create(titre, image, contenu) {
         return this.$http.post('/api/articles', {
             titreArticle: titre,
+            imageArticle: image,
             contenuArticle:contenu
         })
     }
@@ -19,9 +20,10 @@ class articleService {
         return this.$http.get('/api/articles/' + id)
     }
 
-    update(id, titre, contenu) {
+    update(id, titre, image, contenu) {
         return this.$http.put('/api/articles/' + id, {
             titreArticle: titre,
+            imageArticle: image,
             contenuArticle: contenu
         })
     }

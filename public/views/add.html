@@ -1,0 +1,18 @@
+<br>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Ajout d'un article</h3>
+    </div>
+    <div class="panel-body">
+        Titre de l'article
+        <input type="text" class="form-control" placeholder="Le titre de l'article" ng-model="article.titreArticle">
+        <br>
+        Photo de l'article
+        <input type="text" class="form-control" placeholder="Url de la photo de l'article" ng-model="article.imageArticle">
+        <br>
+        Contenu de l'article
+        <textarea class="form-control" rows="8" ng-model="article.contenuArticle"></textarea>
+        <br>
+        <input class="btn btn-default" type="submit" value="Envoyer" ng-click='vm.create(article)'>
+    </div>
+</div>

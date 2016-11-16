@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 
-const todoSchema = new mongoose.Schema({
+const articleSchema = new mongoose.Schema({
     titreArticle: String,
+    imageArticle: String,
     contenuArticle: String
 });
 
@@ -30,8 +31,9 @@ export default class Article {
     }
 
     create(req, res) {
-        modelcreate({
+        model.create({
                 titreArticle: req.body.titreArticle,
+                imageArticle: req.body.imageArticle,
                 contenuArticle: req.body.contenuArticle
             },
             (err, article) => {
@@ -48,6 +50,7 @@ export default class Article {
             _id: req.params.id
         }, {
             titreArticle: req.body.titreArticle,
+            imageArticle: req.body.imageArticle,
             contenuArticle: req.body.contenuArticle
         }, (err, article) => {
             if (err || !article) {

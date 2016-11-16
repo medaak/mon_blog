@@ -7,20 +7,20 @@ class mainController {
 
     load() {
         this.articleService.getAll().then((res) => {
-            this.activites = res.data;
-            console.log("Contenu de res : " + res)
+            this.articles = res.data;
+            console.log("Contenu de res : " + res.data)
         })
     }
 
-    create() {
-        this.articleService.create(this.article).then(() => {
-            this.article = '';
+    create(article) {
+        this.articleService.create(article.titreArticle,article.imageArticle,article.contenuArticle).then(() => {
+            this.article = {};
             this.load()
         })
     }
 
     update(article) {
-        this.articleService.update(article._id, article.titreArticle, article.contenuArticle).then(() => {
+        this.articleService.update(article._id, article.titreArticle, article.imageArticle, article.contenuArticle).then(() => {
             this.load()
         })
     }

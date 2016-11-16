@@ -1,5 +1,5 @@
 import express from 'express';
-import Todo from '../models/article.js';
+import Article from '../models/article.js';
 
 let router = express.Router();
 
